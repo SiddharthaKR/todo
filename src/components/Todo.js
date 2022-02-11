@@ -24,7 +24,7 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
   <div>
     <div className="todo">
       <input
-      className={todo.completed&&"red"}
+     
         style={{ textDecoration: todo.completed && "line-through",color:todo.completed&&"red" }}
         type="text"
         value={todo.title === "" ? newTitle : todo.title}

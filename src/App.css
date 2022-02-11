@@ -7,13 +7,7 @@
 body {
   background-color: #e3f7fe;
 }
-.border-gradient {
-  border: 10px solid linear-gradient(to right, red, purple);
-  border-image-slice: 1;
-  border-width: 5px;
-  /* background: linear-gradient(to right, red, purple); */
-  /* border-image-source: linear-gradient(to left, #EA4C46, #d53a9d); */
-}
+
 .color-border{
    background: linear-gradient(to right, red, purple);
 }
