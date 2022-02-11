@@ -8,11 +8,14 @@ body {
   background-color: #e3f7fe;
 }
 .border-gradient {
-  border: 10px solid;
+  border: 10px solid linear-gradient(to right, red, purple);
   border-image-slice: 1;
   border-width: 5px;
-
-  border-image-source: linear-gradient(to left, #EA4C46, #d53a9d);
+  /* background: linear-gradient(to right, red, purple); */
+  /* border-image-source: linear-gradient(to left, #EA4C46, #d53a9d); */
+}
+.color-border{
+   background: linear-gradient(to right, red, purple);
 }
 .title h1 {
   color: #3a3a3a;
@@ -155,7 +158,10 @@ button:focus {
    margin: 4px 0px;
  }
 }
-
+.red{
+  color: red !important;
+  background-color: red;
+}
 
 
 

@@ -21,9 +21,11 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
     }
   };
   return (
-    <div className={todo.completed?"todo border-gradient":"todo"}>
+  <div>
+    <div className="todo">
       <input
-        style={{ textDecoration: todo.completed && "line-through" }}
+      className={todo.completed&&"red"}
+        style={{ textDecoration: todo.completed && "line-through",color:todo.completed&&"red" }}
         type="text"
         value={todo.title === "" ? newTitle : todo.title}
         className="list"
@@ -48,6 +50,7 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
           <DeleteIcon id="i" />
         </button>
       </div>
+    </div>
     </div>
   );
 }
