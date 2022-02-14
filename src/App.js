@@ -1,9 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import Title from "./components/Title";
 import AddTodo from "./components/AddTodo";
 import Todo from "./components/Todo";
+import Completed from "./components/Completed"
+import NotCompleted from "./components/NotCompleted";
 import {
   collection,
   query,
@@ -19,6 +21,7 @@ import { db } from "./firebase";
 
 function App() {
   const [todos, setTodos] = React.useState([]);
+  const[remove,setRemove]=useState(false);
 
   React.useEffect(() => {
     const q = query(collection(db, "todos"));
@@ -65,22 +68,59 @@ function App() {
         <Title />
       </div>
       <div>
-        <AddTodo deleteComplete={deleteComplete}/>
+        <AddTodo removeComplete={setRemove} value={remove}/>
        
       </div>
-      <div className="todo_container">
-        {todos.map((todo) => (
+      <div className={remove?"sep-cont":"todo_container"}>
+        {!remove?(todos.map((todo) => (
           <Todo
+            
             key={todo.id}
             todo={todo}
             toggleComplete={toggleComplete}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+           
           />
-        ))}
+        ))):(<><div>
+          <h4>Completed Tasks</h4>
+          {
+          todos.map((todo) => (
+            <NotCompleted
+              
+              key={todo.id}
+              todo={todo}
+              toggleComplete={toggleComplete}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+             
+            />
+          ))}
+            </div><div><h4>
+          Not Completed Tasks
+        </h4>
+        {
+          todos.map((todo) => (
+            <Completed
+              
+              key={todo.id}
+              todo={todo}
+              toggleComplete={toggleComplete}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+             
+            />
+          ))}
+          </div>
+</>)}
       </div>
       
 </div>
   );
 }
 export default App;
+
+
+
+
+

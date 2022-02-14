@@ -9,7 +9,7 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
   const toggleClass = () => {
     setActive(!isActive);
   };
-  
+ 
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -21,16 +21,20 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
     }
   };
   return (
-  <div>
-    <div className="todo">
-      <input
-     
-        style={{ textDecoration: todo.completed && "line-through",color:todo.completed&&"red" }}
-        type="text"
-        value={todo.title === "" ? newTitle : todo.title}
-        className="list"
-        onChange={handleChange}
-      />
+  <div className="mg-t">
+    
+
+    
+       <div className="todo ">
+       <input
+          style={{ textDecoration: todo.completed && "line-through",color:todo.completed&&"red" }}
+          type="text"
+          value={todo.title === "" ? newTitle : todo.title}
+          className="list"
+          onChange={handleChange}
+        />
+      
+    
       <div>
         <button
           className="button-complete"
@@ -51,6 +55,9 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
         </button>
       </div>
     </div>
+    
+   
+    
     </div>
   );
 }

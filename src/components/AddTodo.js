@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css"
 
 export default function AddTodo(props) {
 
-
+  const[toggle,setToggle]=useState(false)
   const[error,setError]=React.useState(false)
   const [title, setTitle] = React.useState("");
   ///////
@@ -57,7 +57,9 @@ export default function AddTodo(props) {
       </div>
       <div className="btn_container">
         <button type="submit" className="button-34">Add Task</button>
-        <button type="button" onClick={() => props.deleteComplete()} className="button-34">Remove Completed Tasks</button>
+        <button type="button" onClick={() => props.removeComplete(!props.value)} className="button-34">{
+      !props.value?"Remove Completed tasks": "Edit"        
+}</button>
       </div>
       
     </form>

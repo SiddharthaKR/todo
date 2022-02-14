@@ -61,10 +61,25 @@ form input {
 } */
 
 .todo_container {
-  width: 50%;
   margin: 0 auto;
 }
+.todo_container p{
+  height: 0px;
+}
+.sep-cont{
+ display: flex;
+ justify-content: space-around;
+}
+.mg-t{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.comp-tile1{
+  
+}
 .todo {
+  /* width: 50%; */
   margin-top: 20px;
   background: white;
   padding: 10px 20px;
@@ -134,7 +149,7 @@ button:focus {
  .todo{
    flex-direction: column;
    padding: 0%;
-   margin: 2rem 0px;
+   margin: 2rem 3px;
  }
  .todo input{
    width: 100%;
